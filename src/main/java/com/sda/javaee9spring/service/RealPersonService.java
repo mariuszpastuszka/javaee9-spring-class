@@ -49,4 +49,13 @@ public class RealPersonService {
 
         return result;
     }
+
+    // TODO: validate duplicates
+    public PersonEntity savePerson(PersonEntity entity) {
+        log.info("entity for saving: [{}]", entity);
+        personRepository.save(entity);
+        log.info("entity after saving: [{}]", entity);
+
+        return entity;
+    }
 }
