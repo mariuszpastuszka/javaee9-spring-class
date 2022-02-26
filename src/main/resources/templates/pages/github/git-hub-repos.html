@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Name and surname</title>
+</head>
+<body>
+<h2>Homework</h2>
+<ul>
+  <p>Prepare program which:</p>
+  <li>connects to Your GitHub (using REST API)</li>
+  <li>read data about all Your repositories</li>
+  <li>your url address should be: /show-my-repositories</li>
+  <li>use table for presentation</li>
+  <li>show just few data inside table</li>
+</ul>
+<br>
+<h2>Solution</h2>
+<p>My GitHub repositories</p>
+<table>
+  <thead>
+  <tr>
+    <td>Index</td>
+    <td>Id</td>
+    <td>Name</td>
+    <td>URL</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="repo, iStat: ${gitHubRepositories}">
+    <td th:text="${iStat.index + 1}">1</td>
+    <td th:text="${repo.id}">223349318</td>
+    <td th:text="${repo.name}">angular-simple-start</td>
+    <td><a href="#" th:text="${repo.url}" th:href="${repo.url}">https://github.com/mariuszpastuszka/angular-simple-start</a></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
